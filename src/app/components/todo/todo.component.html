@@ -34,8 +34,15 @@
                 class="example-list"
                 (cdkDropListDropped)="drop($event)"
               >
-                <div class="example-box" *ngFor="let task of tasks" cdkDrag>
+                <div
+                  class="example-box"
+                  *ngFor="let task of tasks; let i = index"
+                  cdkDrag
+                >
                   {{ task.description }}
+                  <button mat-icon-button color="warn" (click)="deleteItem(i)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
                 </div>
               </div>
             </div>
@@ -52,10 +59,19 @@
               >
                 <div
                   class="example-box"
-                  *ngFor="let task of inprogress"
+                  *ngFor="let task of inprogress; let i = index"
                   cdkDrag
                 >
                   {{ task.description }}
+                  <div class="box">
+                    <button
+                      mat-icon-button
+                      color="warn"
+                      (click)="deleteItem(i)"
+                    >
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -70,8 +86,15 @@
                 class="example-list"
                 (cdkDropListDropped)="drop($event)"
               >
-                <div class="example-box" *ngFor="let task of done" cdkDrag>
+                <div
+                  class="example-box"
+                  *ngFor="let task of done; let i = index"
+                  cdkDrag
+                >
                   {{ task.description }}
+                  <button mat-icon-button color="warn" (click)="deleteItem(i)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
                 </div>
               </div>
             </div>

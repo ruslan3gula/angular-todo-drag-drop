@@ -35,6 +35,8 @@ export class TodoComponent implements OnInit {
     this.todoForm.reset();
   }
 
+  deleteItem(value: any) {}
+
   drop(event: CdkDragDrop<Todo[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
