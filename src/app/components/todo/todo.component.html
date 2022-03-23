@@ -43,6 +43,9 @@
                   <button mat-icon-button color="warn" (click)="deleteItem(i)">
                     <mat-icon>delete</mat-icon>
                   </button>
+                  <button mat-icon-button color="primary" (click)="editToDo()">
+                    <mat-icon>edit</mat-icon>
+                  </button>
                 </div>
               </div>
             </div>
@@ -67,9 +70,16 @@
                     <button
                       mat-icon-button
                       color="warn"
-                      (click)="deleteItem(i)"
+                      (click)="deleteInprogressItem(i)"
                     >
                       <mat-icon>delete</mat-icon>
+                    </button>
+                    <button
+                      mat-icon-button
+                      color="primary"
+                      (click)="editToDo()"
+                    >
+                      <mat-icon>edit</mat-icon>
                     </button>
                   </div>
                 </div>
@@ -92,8 +102,15 @@
                   cdkDrag
                 >
                   {{ task.description }}
-                  <button mat-icon-button color="warn" (click)="deleteItem(i)">
+                  <button
+                    mat-icon-button
+                    color="warn"
+                    (click)="deleteDoneItem(i)"
+                  >
                     <mat-icon>delete</mat-icon>
+                  </button>
+                  <button mat-icon-button color="primary" (click)="editToDo()">
+                    <mat-icon>edit</mat-icon>
                   </button>
                 </div>
               </div>

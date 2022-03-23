@@ -35,7 +35,18 @@ export class TodoComponent implements OnInit {
     this.todoForm.reset();
   }
 
-  deleteItem(value: any) {}
+  deleteItem(value: any) {
+    return this.tasks.splice(value, 1);
+  }
+
+  deleteInprogressItem(value: any) {
+    return this.inprogress.splice(value, 1);
+  }
+  deleteDoneItem(value: any) {
+    return this.done.splice(value, 1);
+  }
+
+  editToDo() {}
 
   drop(event: CdkDragDrop<Todo[]>) {
     if (event.previousContainer === event.container) {
